@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <div>
+    <form action="" id="taskAdd">
+        <input type="text" id="taskElement" placeholder="inserisci la tua task">
+        <button type="submit" id="taskButton">Aggiungi</button>
+    </form>
+    <form action="" id="taskCont">
+
+    </form>
+    </div>
+</body>
+<script>
+const createTask = (invio) => {
+    invio.preventDefault()
+    const form2 = document.getElementById("taskCont")
+    const task = document.createElement("p")
+    task.innerText = document.getElementById("taskElement").value
+    form2.appendChild(task)
+    const deleteButton = document.createElement("button")
+    deleteButton.innerText = "cancella"
+    deleteButton.addEventListener("click", createTask)
+    form2.removeChild(task) 
+}
+    const pulsante = document.getElementById("taskButton")
+    pulsante.addEventListener("click", createTask)
+</script>
+</html>
